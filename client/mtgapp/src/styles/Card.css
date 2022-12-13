@@ -1,0 +1,53 @@
+
+.thumb-container{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 10px;
+   
+
+}
+
+.button-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.random-card-container{
+    display: flex;
+    margin: 15px;
+}
+
+.card-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+
+.image-normal{
+    height: 400px;
+    width: auto;
+    margin: auto;
+}
+
+.image-thumb{
+    height: 200px;
+    width: auto;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+
+}
+
+.fav-btn{
+    justify-self: center;
+    align-self: center;
+}
+
+.modal-image{
+    width: 100%;
+    height: auto;
+    align-self: center;
+}
