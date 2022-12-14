@@ -4,6 +4,7 @@ import Home from '../components/Home'
 import {connect} from 'react-redux'
 import CenterModal from './CenterModal';
 import 'bootstrap/dist/css/bootstrap.min.css'
+import '../styles/Body.css'
 
 
 
@@ -68,8 +69,8 @@ function SearchCard(){
   
     const searchedCardItems = searchedCards.map((card,index)=>{
         return <div className='card-container' key={index}>
-                    <img variant="primary" onClick={()=>handleImgClick(card)}  className='image-thumb' src={card.image_uris ? card.image_uris.normal : card.card_faces[0].image_uris.normal}/>
-                <button onClick={()=>card.image_uris ? handleAddFav(card.image_uris.normal) : handleAddFav(card.card_faces[0].image_uris.normal)} className='fav-btn'>Favorite</button>
+                    <img variant="primary" onClick={()=>handleImgClick(card)}  className='image-thumb' src={card.image_uris ? card.image_uris.border_crop : card.card_faces[0].image_uris.border_crop}/>
+                <button onClick={()=>card.image_uris ? handleAddFav(card.image_uris.border_crop) : handleAddFav(card.card_faces[0].image_uris.border_crop)} className='fav-btn'>Favorite</button>
         
                 </div>
                 
@@ -81,7 +82,7 @@ function SearchCard(){
         <input onKeyDown={handleKeyDown} type = 'text' name= 'cardName' placeholder= 'Enter card name' onChange={(e)=>setCardName (e.target.value)} />
         <button onClick ={fetchSearchCard}>Search</button>
         <div className='thumb-container'>{searchedCardItems}</div>
-        {Object.keys(objCard).length>0?<CenterModal cardobj={objCard} image={objCard.image_uris.normal}
+        {Object.keys(objCard).length>0?<CenterModal cardobj={objCard} image={objCard.image_uris.border_crop}
             show={modalShow}
             onHide={()=>setModalShow(false)}
             /> : ''}

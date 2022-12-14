@@ -1,6 +1,10 @@
 import {useState} from 'react'
 import { useNavigate } from 'react-router-dom'
 import {connect} from 'react-redux'
+import '../styles/Register.css'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import LogoIcon from '../Icons/LogoIcon.js'
+
 
 
 function Login (props) {
@@ -56,11 +60,18 @@ function Login (props) {
 }
     return(
         <>
-            <input onChange = {handleOnChange} name = "username" type = "text" placeholder = "Enter username" />
-            <input onChange = {handleOnChange} name = "password" type = "password" placeholder = "Enter password" />
-            <button onClick = {handleSubmit}>Login</button>
-            <button onClick = {handleRegister}>Register</button>
-            <button onClick = {handleHome}>Home</button>
+            <div className='reg-body'>
+                <FontAwesomeIcon className='user-icon' icon={["fas", "fa-user"]}/>
+                <div className='reg-container'>
+                    <input className='reg-textbox' onChange = {handleOnChange} name = "username" type = "text" placeholder = "Enter username" />
+                    <input className='reg-textbox' onChange = {handleOnChange} name = "password" type = "password" placeholder = "Enter password" />
+                    <div>
+                        <button className='reg-log-btn' onClick = {handleSubmit}>Login</button>
+                        <button className='reg-log-reg-btn' onClick = {handleRegister}>Register</button>
+                    </div>    
+                    <button className='reg-home-btn' onClick = {handleHome}>Home</button>
+                </div> 
+            </div>
         </>
     )
 }

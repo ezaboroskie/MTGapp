@@ -2,15 +2,17 @@ import IncrementDecrementCounter from "./IncrementDecrementCounter"
 import AddSubtractCounter from "./AddSubtractCounter"
 import DisplayCounter from "./DisplayCounter"
 import Home from "./Home"
+import '../styles/Counter.css'
 
 function Counter(){
 
 return(
   <>
+    <div className="counter-container">
     <IncrementDecrementCounter/>
-    <AddSubtractCounter/>
     <DisplayCounter/>
-    <Home/>
+    <AddSubtractCounter/>
+    </div>
 
   </>
 )

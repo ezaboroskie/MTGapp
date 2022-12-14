@@ -38,7 +38,11 @@
     padding: 10px;
     display: flex;
     flex-direction: column;
+}
 
+.image-thumb:hover{
+    cursor: pointer;
+    
 }
 
 .fav-btn{

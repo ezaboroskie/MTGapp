@@ -1,6 +1,8 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {useState} from 'react'
 import {connect} from 'react-redux'
 import * as actionCreators from '../store/creators/actionCreators'
+import '../styles/Counter.css'
 
 function AddSubtractCounter(props){
 
@@ -17,9 +19,22 @@ function AddSubtractCounter(props){
 
     return(
         <>
-            <input type = 'text' onChange = {handleChange}/>
-            <button onClick = {() => props.onAdd(parseInt(counter))}>Add</button>
-            <button onClick = {() => props.onSubtract(parseInt(counter))}>Subtract</button>
+            <div className='add-sub-container'>
+                <div className='plus-container'>
+                    <FontAwesomeIcon className='plus-icon' onClick = {() => props.onAdd(parseInt(counter))} icon={["fas", "fa-circle-plus"]}/>
+                </div>
+                <div className='text-box-container'>
+                    <input className='text-box'  type = 'text' onChange = {handleChange}/>
+                </div>
+                <div className='minus-container'>
+                    <FontAwesomeIcon className='minus-icon' onClick = {() => props.onSubtract(parseInt(counter))} icon={["fas", "fa-circle-minus"]}/>
+                </div>
+            </div>
+
+
+
+            {/* <button >Add</button>
+            <button >Subtract</button> */}
         </>
     )
 

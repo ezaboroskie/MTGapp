@@ -32,7 +32,7 @@ function RandomCard(){
         .then(response=>response.json())
         .then(randomCard=>{
             setRandomCard(randomCard)
-            setImageUrl(randomCard.image_uris.normal)
+            setImageUrl(randomCard.image_uris.border_crop)
         })
     }
 
