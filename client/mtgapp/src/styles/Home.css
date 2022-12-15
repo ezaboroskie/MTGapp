@@ -1,7 +1,11 @@
 .top-container{
     display: flex;
-    justify-content: center;
-    
+    width: 100%;
+}
+
+.top-container-large{
+    display: flex;
+    width: 100%;
 }
 
 .user-left-container{
@@ -68,8 +72,7 @@ p {
     transform: translateX(-75%);
     background-color: rgb(221, 85, 35);
     z-index: 1;
-    border-radius: 5px;
-    
+    border-radius: 5px; 
 
 }
 
@@ -103,9 +106,11 @@ p {
 
 .nav-container-large{
     display: flex;
-    width: 60%;
-    margin-top: 10px;
+    width: 100%;
+    margin-top: 100px;
     justify-content: center;
+    align-self: center;
+    justify-self: center;
 }
 
 .home-search-btn{
@@ -158,29 +163,56 @@ p {
 
 .home-user-icon{
     font-size: 50px;
-    color: white;
     margin-left: 10px;
     margin-bottom: 20px;
-    color:rgb(221, 85, 35)
+    color:rgb(221, 85, 35);
+    cursor: pointer;
+
 }
 
 .home-user-icon:hover{
-    color: white
+    color: white;
+    
 }
 
 .home-roll-btn{
-    width: 100px;
+    width: 150px;
     height: 50px;
     border: none;
     border-radius: 5px;
     padding: none;
     background-color: rgb(221, 85, 35);
-    margin: 2px;
+    color: white
+}
+
+.home-roll-btn:hover{
+    background-color: white;
+    color:rgb(221, 85, 35)
+}
+
+.home-roll-btn:active{
+    background-color: rgb(51, 122, 51);
     color: white
 }
 
 .roll-btn-container{
     display: flex;
     justify-content: center;
+    margin-top: 100px;
 }
 
+.logo-center{
+    height: 50px;
+    width: auto;
+}
+
+.logo-container{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right:0;
+    text-align: center;
+    margin-top: 10px;
+    width: 200px
+}

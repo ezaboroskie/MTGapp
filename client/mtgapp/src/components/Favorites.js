@@ -3,6 +3,8 @@ import '../styles/Card.css'
 import Home from '../components/Home'
 import FavModal from '../components/FavModal'
 
+const logo = require('../images/logo.png')
+
 function Favorites () {
 
     const [cards, setCards] = useState([])
@@ -55,7 +57,7 @@ function Favorites () {
 
         return  <div className='card-container' key ={index}>
                 <img variant="primary" onClick={()=>handleImgClick(card)}  className='image-thumb' src= {card.imageurl}/>
-                <button onClick={()=> handleDelFav(card.id)}>Remove Favorite</button>
+                <button className='rem-fav-btn' onClick={()=> handleDelFav(card.id)}>Remove Favorite</button>
                 </div>
             
     })
@@ -63,6 +65,7 @@ function Favorites () {
     return(
         <>
             <Home/>
+            <img className='logo-center' alt='logo' src={String(logo)} />
             <div className='thumb-container'>{cardItems}</div>
             {Object.keys(objCard).length>0?<FavModal cardobj={objCard} image={objCard.imageurl}
             show={modalShow}

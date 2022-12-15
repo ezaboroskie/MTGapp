@@ -3,6 +3,8 @@ import Die from '../components/Die'
 import '../styles/RollDice.css'
 import Home from '../components/Home'
 
+const logo = require('../images/logo.png')
+
 class RollDice extends Component{
     static defaultProps = {
         sides: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20 ]
@@ -13,7 +15,8 @@ class RollDice extends Component{
         super(props)
         this.state={
             die1:'',
-            rolling: false
+            rolling: false,
+            showh1: false
         }
         this.roll = this.roll.bind(this)
     }
@@ -22,25 +25,33 @@ class RollDice extends Component{
         const {sides} = this.props
         this.setState({
             die1 : sides[Math.floor(Math.random() * sides.length)],
-            rolling:true
+            rolling:true,
+            showh1:true
         })
         setTimeout(() => {
             this.setState({rolling:false})
+        },1000)
+        setTimeout(()=>{
+            this.setState({showh1:false})
         },1000)
         }
     
     render(){
         const handleBtn = this.state.rolling ? 
         'RollDice-rolling' : ''
-        const {die1,rolling} = this.state
+        const {die1,rolling,showh1} = this.state
+
+
         return(
             <>
             <Home/>
+            <img className='logo-center' alt='logo' src={String(logo)} />
             <div className = 'RollDice'>
                 <div className = 'RollDice-container'>
-                    <Die face = {die1} rolling ={rolling}/>      
+                    <Die face = {die1} rolling ={rolling}/>
+                <h1 hidden={this.state.showh1} className='DisplayNumber'>{die1}</h1>          
                 </div>
-                <h1 className='DisplayNumber'>{die1}</h1>
+                
                 <button className = {handleBtn}
                     disabled= {this.state.rolling}
                     onClick = {this.roll}>

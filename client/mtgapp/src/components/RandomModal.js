@@ -14,11 +14,11 @@ function RandomModal (props){
           aria-labelledby="contained-modal-title-vcenter"
           centered
         >
-          <Modal.Body>
+          <Modal.Body className='modal-body'>
             <img className='modal-image' src={props.image}/>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={props.onHide}>Close</Button>
+            <Button className='btn-primary' onClick={props.onHide}>Close</Button>
           </Modal.Footer>
         </Modal>
       );

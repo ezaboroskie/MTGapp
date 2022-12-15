@@ -106,11 +106,27 @@
 .reg-heading{
     color: rgb(221, 85, 35);
     text-align: center;
-    font-size: 50px
+    font-size: 50px;
+    margin-top: 75px
 }
 
 .reg-heading2{
     color: rgba(255, 255, 255, 0.74);
     text-align: center;
     margin-bottom: 30px;
+    font-size: 20px
+}
+
+
+.logo-container{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right:0;
+    top:0;
+    text-align: center;
+    margin-top: 10px;
+    width: 200px;
+    height: 100px
 }

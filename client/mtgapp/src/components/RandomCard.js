@@ -4,6 +4,7 @@ import Home from '../components/Home'
 import RandomModal from "./RandomModal";
 import 'bootstrap/dist/css/bootstrap.min.css'
 
+const logo = require('../images/logo.png')
 
 function RandomCard(){
 
@@ -60,16 +61,19 @@ function RandomCard(){
 
     return(
         <>
-    
+     <Home/>
+
+        <img className='logo-center' alt='logo' src={String(logo)} />
+
         <div className='random-card-container'>
            
             <img variant="primary" onClick={()=>handleImgClick(randomCard)} className='image-normal' src={imageUrl}></img>
 
         </div>
         <div className='button-container'>
-        <button onClick ={()=>handleReload()}>Random Card</button>
-        <button onClick ={()=>handleAddFav(imageUrl)} className='fav-btn'>Favorite</button>
-        <Home/>
+        <button onClick ={()=>handleReload()} className='rand-reload-btn'>Random Card</button>
+        <button onClick ={()=>handleAddFav(imageUrl)} className='fav-btn1'>Favorite</button>
+       
         <RandomModal cardobj={objCard} image={imageUrl}
             show={modalShow}
             onHide={()=>setModalShow(false)}/>

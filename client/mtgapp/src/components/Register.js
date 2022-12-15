@@ -3,12 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import '../styles/Register.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+const logo = require('../images/logo.png')
+
 function Register(){
     const [user, setUser] = useState({})
-    const [firstName, setFirstName] = useState('')
-    const [lastName, setLastName] = useState('')
-    const [username, setUsername] = useState('')
-    const [password, setPassword] = useState('')
     const navigate = useNavigate()
     
 
@@ -25,10 +23,6 @@ function Register(){
 
     const handleSubmit = () => {
 
-        if(firstName.length==0){return}
-        if(lastName.length==0){return}
-        if(username.length==0){return}
-        if(password.length==0){return}
 
         fetch('http://localhost:8080/register', {
             method:'POST',
@@ -50,8 +44,10 @@ function Register(){
 
     return(
         <>  
-            <div className='reg-body'>
-                
+            <div className='logo-container'> 
+            <img className='logo-center' alt='logo' src={String(logo)} /> 
+            </div>
+            <div className='reg-body'>  
                 <h1 className='reg-heading'>New Sorcerer</h1>    
                 <h3 className='reg-heading2'>register to save your favorite cards</h3>
                 <FontAwesomeIcon className='user-icon' icon={["fas", "fa-user"]}/>
@@ -63,7 +59,8 @@ function Register(){
                     <button className='reg-reg-btn' onClick ={handleSubmit}>Register</button>
                     <button className='reg-home-btn' onClick ={handleHome}>Home</button>
                 </div>
-            </div>
+            </div> 
+           
         </>
     )
 

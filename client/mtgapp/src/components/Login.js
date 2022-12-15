@@ -4,7 +4,7 @@ import {connect} from 'react-redux'
 import '../styles/Register.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-
+const logo = require('../images/logo.png')
 
 
 
@@ -61,8 +61,10 @@ function Login (props) {
 }
     return(
         <>
+            <div className='logo-container'> 
+                <img className='logo-center' alt='logo' src={String(logo)} /> 
+            </div>
             <div className='reg-body'>
-
                 <h1 className='reg-heading'>The Spellbook</h1>
                 <h3 className='reg-heading2'>a MTG companion app</h3>
                 <FontAwesomeIcon className='user-icon' icon={["fas", "fa-user"]}/>

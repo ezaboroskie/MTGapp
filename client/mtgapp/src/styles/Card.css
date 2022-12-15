@@ -3,7 +3,8 @@
     display: flex;
     flex-wrap: wrap;
     padding: 10px;
-   
+    margin: auto;
+    justify-content: center;
 
 }
 
@@ -11,6 +12,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 }
 
 .random-card-container{
@@ -30,6 +32,7 @@
     height: 400px;
     width: auto;
     margin: auto;
+    cursor: pointer;
 }
 
 .image-thumb{
@@ -48,10 +51,141 @@
 .fav-btn{
     justify-self: center;
     align-self: center;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(221, 85, 35);
+}
+
+.fav-btn1{
+    justify-self: center;
+    align-self: center;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(221, 85, 35);
+    height: 35px;
+    color: white
+}
+
+.fav-btn1:hover{
+    background-color: white;
+    color:rgb(221, 85, 35)
+}
+
+.fav-btn1:active{
+    background-color: rgb(51, 122, 51);
+    color: white
+}
+
+.rand-reload-btn{
+    border: none;
+    height:35px;
+    border-radius: 5px;
+    background-color: rgb(221, 85, 35);
+    margin: 10px;
+    color: white;
+}
+
+.rand-reload-btn:hover{
+    background-color: white;
+    color: rgb(221, 85, 35);
+}
+
+.rand-reload-btn:active{
+    background-color: rgb(51, 122, 51); 
+    color: white;
+    border: none
+}
+
+.rem-fav-btn{
+    border: none;
+    height:35px;
+    border-radius: 5px;
+    background-color: rgb(221, 85, 35);
+    margin: 10px;
+    color: white;
+}
+
+.rem-fav-btn:hover{
+    background-color: white;
+    color:rgb(221, 85, 35)
+}
+
+.rem-fav-btn:active{
+    background-color: rgb(51, 122, 51);
+    color:white;
+}
+
+.fav-btn:hover{
+    background-color: white;
+    color: rgb(221, 85, 35)
+}
+
+.fav-btn:active{
+    background-color: green;
+    color: white
 }
 
 .modal-image{
     width: 100%;
     height: auto;
     align-self: center;
+    max-width: 466px;
+    justify-content: center;
+    justify-self: center;
+}
+
+.search-bar-container{
+    display: flex;
+    align-self: center;
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.search-bar{
+    height: 35px;
+    border: none;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+
+.search-btn{
+    border: none;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+    background-color: rgb(221, 85, 35);
+}
+
+input:focus{
+    outline:none
+}
+
+.logo-center{
+    height: 50px;
+    width: auto;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right:0;
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn-primary {
+    background-color: rgb(221, 85, 35);
+    color: white;
+    outline: none;
+    border: none
+}
+
+.btn-primary:hover{
+    background-color: rgb(221, 85, 35);
+    color: white;
+    outline: none
+}
+
+.modal-body{
+    display: flex;
+    justify-content: center;
 }

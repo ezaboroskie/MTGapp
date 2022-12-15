@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import '../styles/Card.css'
 import Home from '../components/Home'
 import {connect} from 'react-redux'
 import CenterModal from './CenterModal';
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../styles/Body.css'
+import '../styles/Card.css'
 
-
+const logo = require('../images/logo.png')
 
 function SearchCard(){
 
@@ -79,8 +79,13 @@ function SearchCard(){
     return(
         <>
         <Home/>
-        <input onKeyDown={handleKeyDown} type = 'text' name= 'cardName' placeholder= 'Enter card name' onChange={(e)=>setCardName (e.target.value)} />
-        <button onClick ={fetchSearchCard}>Search</button>
+        
+        <img className='logo-center' alt='logo' src={String(logo)} />
+       
+        <div className='search-bar-container'>
+        <input className='search-bar' onKeyDown={handleKeyDown} type = 'text' name= 'cardName' placeholder= 'Enter card name' onChange={(e)=>setCardName (e.target.value)} />
+        <button className='search-btn' onClick ={fetchSearchCard}>Search</button>
+        </div>
         <div className='thumb-container'>{searchedCardItems}</div>
         {Object.keys(objCard).length>0?<CenterModal cardobj={objCard} image={objCard.image_uris.border_crop}
             show={modalShow}

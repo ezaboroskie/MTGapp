@@ -11,8 +11,10 @@ import './styles/Register.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useState, useEffect } from 'react';
 
+
 library.add(fas)
 
+const logo = require('./images/logo.png')
 
 
 function App() {
@@ -53,7 +55,8 @@ function App() {
 
   return(
     <>
-    <div className='top-container'>
+
+    <div className='top-container'>  
       <div className='user-left-container'>
         <div className='user-container'>
           <FontAwesomeIcon className='home-user-icon' icon={["fas", "fa-user"]}/>
@@ -66,7 +69,13 @@ function App() {
       </div>
     </div>
 
+    <div className='logo-container'>
+    <img className='logo-center' alt='logo' src={String(logo)} />
+    </div>
+   
+
     {matches &&(
+      
       <div className='nav-right-container'>
         <div className='nav-container'>
           <FontAwesomeIcon className='nav-drop-icon' icon={["fas", "fa-bars"]}/>
@@ -77,13 +86,16 @@ function App() {
           </div>
         </div> 
       </div>
+      
     )}
 
     {!matches &&(
-      <div className='nav-container-large'>
-        <button className='home-search-btn' onClick ={handleSearchCard}>Search Card</button>
-        <button className='home-rand-btn' onClick ={handleRandomCard}>Random Card</button>
-        <button className='home-fav-btn' onClick ={handleFavorites}>Favorite Cards</button>
+      <div className='top-container-large'>
+        <div className='nav-container-large'>
+          <button className='home-search-btn' onClick ={handleSearchCard}>Search Card</button>
+          <button className='home-rand-btn' onClick ={handleRandomCard}>Random Card</button>
+          <button className='home-fav-btn' onClick ={handleFavorites}>Favorite Cards</button>
+        </div>
       </div>
     )}
 

@@ -18,12 +18,13 @@ function CenterModal(props){
             <Modal.Title id="contained-modal-title-vcenter">
              {props.cardobj.name}
             </Modal.Title>
+            <Button className='btn-primary' onClick={props.onHide}>Close</Button>
           </Modal.Header>
-          <Modal.Body>
+          <Modal.Body className='modal-body'>
             <img className='modal-image' src={props.image}/>
           </Modal.Body>
           <Modal.Footer>
-            <Button onClick={props.onHide}>Close</Button>
+            <Button className='btn-primary' onClick={props.onHide}>Close</Button>
           </Modal.Footer>
         </Modal>
       );
