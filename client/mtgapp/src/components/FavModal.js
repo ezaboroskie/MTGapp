@@ -6,7 +6,6 @@ function FavModal(props){
 
     console.log(props)
    
-
     return (
         <Modal
           {...props}

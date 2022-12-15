@@ -10,11 +10,20 @@ function Favorites () {
     const [cards, setCards] = useState([])
     const [modalShow, setModalShow]= React.useState(false)
     const [objCard, setObjCard] = useState({})
+    const [matchesS, setMatchesS] = useState(
+        window.matchMedia("(max-width:340px)").matches
+      )
 
 
     useEffect(()=>{
         fetchCards()
     }, [])
+
+    useEffect(()=>{
+        window
+        .matchMedia("(max-width:340px)")
+        .addEventListener('change', e => setMatchesS(e.matches));
+      }, [])
 
     const fetchCards = () =>{
         
@@ -64,8 +73,24 @@ function Favorites () {
 
     return(
         <>
+            <div className='top-container'>
             <Home/>
+            </div>
+            
+            {matchesS &&(
+            <div className='logo-container-small-fav'>
+            <img className='logo-center-small-fav' alt='logo' src={String(logo)} />
+            </div>
+            )}
+
+
+            {!matchesS &&(
+            <div className='logo-container'>
             <img className='logo-center' alt='logo' src={String(logo)} />
+            </div>
+            )}
+
+
             <div className='thumb-container'>{cardItems}</div>
             {Object.keys(objCard).length>0?<FavModal cardobj={objCard} image={objCard.imageurl}
             show={modalShow}

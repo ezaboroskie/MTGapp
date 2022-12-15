@@ -23,10 +23,20 @@ function App() {
     window.matchMedia("(max-width:720px)").matches
   )
 
+  const[matchesS, setMatchesS] = useState(
+    window.matchMedia("(max-width:340px)").matches
+  )
+
   useEffect(()=>{
     window
     .matchMedia("(max-width:720px)")
     .addEventListener('change', e => setMatches(e.matches));
+  }, [])
+
+  useEffect(()=>{
+    window
+    .matchMedia("(max-width:340px)")
+    .addEventListener('change', e => setMatchesS(e.matches));
   }, [])
 
   const navigate = useNavigate()
@@ -69,13 +79,20 @@ function App() {
       </div>
     </div>
 
+    {matchesS &&(
+          <div className='logo-container-small'>
+          <img className='logo-center-small' alt='logo' src={String(logo)} />
+          </div>
+    )}
+
+    {!matchesS &&(
     <div className='logo-container'>
     <img className='logo-center' alt='logo' src={String(logo)} />
     </div>
-   
+    )}
+
 
     {matches &&(
-      
       <div className='nav-right-container'>
         <div className='nav-container'>
           <FontAwesomeIcon className='nav-drop-icon' icon={["fas", "fa-bars"]}/>

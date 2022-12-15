@@ -4,6 +4,8 @@ const models = require('./models')
 const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const authenticate = require('./middlewares/authMiddleware')
+const bcrypt = require('bcryptjs')
+require('dotenv').config()
 
 
 app.use(cors())
@@ -40,13 +42,15 @@ app.get('/:userId/favorites', authenticate, async(req,res)=>{
 //POST ROUTES
 app.post('/register', async (req,res)=>{
     const {username, password, firstName, lastName} = req.body
+    let salt = await bcrypt.genSalt(10)
+    let hashedPassword = await bcrypt.hash(password, salt)
     let user = await models.User.findOne({where: {username:username}})
     if (user){
         res.json({error: 'This username is in use. Please try another'})
     }else{
         const newUser = models.User.build({
             username: username,
-            password: password,
+            password: hashedPassword,
             firstName: firstName,
             lastName: lastName,
         })
@@ -63,17 +67,17 @@ app.post('/login', async (req,res)=>{
     const savedUser = await models.User.findOne({
         where: {
             username: username,
-            password: password
         }
     })
 
     if(savedUser){
         const token = jwt.sign({username: savedUser.username}, 'SECRETKEYJWT')
-        res.json({success: true, token: token, username: savedUser.username, userId:savedUser.id })
+        const result = await bcrypt.compare(password, savedUser.password)
+        if(result){res.json({success: true, token: token, username: savedUser.username, userId:savedUser.id })
     }else{
         res.alert('Username or Password is not correct')
         
-    }
+    }}
 })
 
 app.post('/add-fav', authenticate, async (req,res)=>{

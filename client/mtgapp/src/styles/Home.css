@@ -61,6 +61,7 @@ p {
     display: inline-block;
     margin: 10px;
     cursor: pointer;
+    z-index: 2;
 }
 
 .nav-dropdown{
@@ -73,7 +74,7 @@ p {
     background-color: rgb(221, 85, 35);
     z-index: 1;
     border-radius: 5px; 
-
+    z-index: 2;
 }
 
 .nav-dropdown p{
@@ -167,6 +168,7 @@ p {
     margin-bottom: 20px;
     color:rgb(221, 85, 35);
     cursor: pointer;
+    z-index: 2;
 
 }
 
@@ -204,6 +206,7 @@ p {
 .logo-center{
     height: 50px;
     width: auto;
+    z-index: 1;
 }
 
 .logo-container{
@@ -214,5 +217,43 @@ p {
     right:0;
     text-align: center;
     margin-top: 10px;
-    width: 200px
+    width: 200px;
+    z-index: 1;
+}
+
+.logo-center-small{
+    height: 30px;
+    width: auto;
+    z-index: 1;
+}
+
+.logo-container-small{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right:0;
+    text-align: center;
+    margin-top: 10px;
+    width: 125px;
+    z-index: 1;
+}
+
+.logo-center-small-fav{
+    height: 30px;
+    width: auto;
+    z-index: 1;
+}
+
+.logo-container-small-fav{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right:0;
+    top: 0;
+    text-align: center;
+    margin-top: 10px;
+    width: 125px;
+    z-index: 1;
 }

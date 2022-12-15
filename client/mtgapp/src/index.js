@@ -32,8 +32,8 @@ root.render(
     <Provider store ={store}>
     <BrowserRouter>
     <Routes>
-      <Route path = "/" element = {<App/>}/>
       <Route path = "/login" element = {<Login/>}/>
+      <Route path = "/" element = {<App/>}/>
       <Route path = "/register" element = {<Register/>}/>
       <Route path = "/rolldice" element = {<RollDice/>}/>
       <Route path = "/home" element ={<App/>}/>

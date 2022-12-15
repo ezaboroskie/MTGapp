@@ -140,6 +140,7 @@
     width: 100%;
     justify-content: center;
     margin-top: 10px;
+    z-index: 2;
 }
 
 .search-bar{
@@ -147,6 +148,7 @@
     border: none;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
+    z-index: 2;
 }
 
 .search-btn{
@@ -154,6 +156,7 @@
     border-top-right-radius: 5px;
     border-bottom-right-radius: 5px;
     background-color: rgb(221, 85, 35);
+    z-index: 2;
 }
 
 input:focus{

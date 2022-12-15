@@ -3,7 +3,7 @@
     "username": "ycwysjss",
     "password": "iM9W6IkAoqlg2gTiZYz6squBk6HMv3yk",
     "database": "ycwysjss",
-    "host": "rajje.db.elephantsql.com",
+    "host": "rajje.db.elephantsql.com", 
     "dialect": "postgres"
   },
   "test": {

@@ -14,7 +14,16 @@ function SearchCard(){
     const[cardName, setCardName] = useState ('')
     const[modalShow, setModalShow]= React.useState(false)
     const[objCard, setObjCard] = useState({})
+    const[matchesS, setMatchesS] = useState(
+        window.matchMedia("(max-width:340px)").matches
+      )
   
+    
+    useEffect(()=>{
+        window
+        .matchMedia("(max-width:340px)")
+        .addEventListener('change', e => setMatchesS(e.matches));
+        }, [])
 
     useEffect(()=>{
         fetchSearchCard()
@@ -80,7 +89,17 @@ function SearchCard(){
         <>
         <Home/>
         
+        {matchesS &&(
+        <div className='logo-container-small-fav'>
+        <img className='logo-center-small-fav' alt='logo' src={String(logo)} />
+        </div>
+        )}
+
+        {!matchesS &&(
+        <div className='logo-container'>
         <img className='logo-center' alt='logo' src={String(logo)} />
+        </div>
+        )}
        
         <div className='search-bar-container'>
         <input className='search-bar' onKeyDown={handleKeyDown} type = 'text' name= 'cardName' placeholder= 'Enter card name' onChange={(e)=>setCardName (e.target.value)} />
