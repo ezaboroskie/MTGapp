@@ -51,8 +51,10 @@ function Register(){
     return(
         <>  
             <div className='reg-body'>
+                
+                <h1 className='reg-heading'>New Sorcerer</h1>    
+                <h3 className='reg-heading2'>register to save your favorite cards</h3>
                 <FontAwesomeIcon className='user-icon' icon={["fas", "fa-user"]}/>
-                <h1 className='reg-heading'>Register to Favorite Cards</h1>    
                 <div className='reg-container'>
                     <input className='reg-textbox' onChange ={handleOnChange} name = "firstName" type = "text" placeholder="Enter your first name"/>
                     <input className='reg-textbox' onChange ={handleOnChange} name = "lastName" type = "text" placeholder="Enter your last name"/>

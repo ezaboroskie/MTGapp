@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import {connect} from 'react-redux'
 import '../styles/Register.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import LogoIcon from '../Icons/LogoIcon.js'
+
+
 
 
 
@@ -61,6 +62,9 @@ function Login (props) {
     return(
         <>
             <div className='reg-body'>
+
+                <h1 className='reg-heading'>The Spellbook</h1>
+                <h3 className='reg-heading2'>a MTG companion app</h3>
                 <FontAwesomeIcon className='user-icon' icon={["fas", "fa-user"]}/>
                 <div className='reg-container'>
                     <input className='reg-textbox' onChange = {handleOnChange} name = "username" type = "text" placeholder = "Enter username" />
@@ -70,7 +74,7 @@ function Login (props) {
                         <button className='reg-log-reg-btn' onClick = {handleRegister}>Register</button>
                     </div>    
                     <button className='reg-home-btn' onClick = {handleHome}>Home</button>
-                </div> 
+                </div>
             </div>
         </>
     )

@@ -57,7 +57,8 @@
 
 .reg-log-btn:hover{
     transform: translateY(-5px);
-    background-color: green;
+    background-color: white;
+    color:  rgb(221, 85, 35);
 }
 
 .reg-log-reg-btn{
@@ -75,12 +76,14 @@
 
 .reg-log-reg-btn:hover{
     transform: translateY(-5px);
-    background-color: green;
+    background-color: white;
+    color:  rgb(221, 85, 35);
 }
 
 .reg-reg-btn:hover{
     transform: translateY(-5px);
-    background-color: green;
+    background-color: white;
+    color:  rgb(221, 85, 35);
 }
 
 .reg-home-btn{
@@ -97,10 +100,17 @@
 
 .reg-home-btn:hover{
     transform: translateY(5px);
-    background-color: green;
+    background-color: rgb(51, 122, 51);
 }
 
 .reg-heading{
+    color: rgb(221, 85, 35);
+    text-align: center;
+    font-size: 50px
+}
+
+.reg-heading2{
     color: rgba(255, 255, 255, 0.74);
     text-align: center;
+    margin-bottom: 30px;
 }

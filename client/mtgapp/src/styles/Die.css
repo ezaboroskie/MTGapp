@@ -8,11 +8,9 @@ svg{
 .Die {
     font-size: 10em;
     padding: 0.25em;
-    color:rgb(123, 214, 123);
+    color:  rgb(221, 85, 35);
     justify-self: center;
-
-    
-    
+ 
 }
 
 .Die-shaking{

@@ -35,7 +35,7 @@ class RollDice extends Component{
         const {die1,rolling} = this.state
         return(
             <>
-            
+            <Home/>
             <div className = 'RollDice'>
                 <div className = 'RollDice-container'>
                     <Die face = {die1} rolling ={rolling}/>      
@@ -46,7 +46,7 @@ class RollDice extends Component{
                     onClick = {this.roll}>
                     {this.state.rolling ? 'Rolling' : 'Roll Dice!'}
                 </button>
-                <Home/>
+                
             </div>
            
             
