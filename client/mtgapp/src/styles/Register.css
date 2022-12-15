@@ -61,6 +61,12 @@
     color:  rgb(221, 85, 35);
 }
 
+.reg-log-btn:active{
+    transform: translateY(-5px);
+    background-color: rgb(221, 85, 35);
+    color:  white
+}
+
 .reg-log-reg-btn{
     width: 100px;
     height: 50px;
@@ -72,18 +78,28 @@
     color: white
 }
 
-
-
 .reg-log-reg-btn:hover{
     transform: translateY(-5px);
     background-color: white;
     color:  rgb(221, 85, 35);
 }
 
+.reg-log-reg-btn:active{
+    transform: translateY(-5px);
+    background-color: rgb(221, 85, 35);
+    color:  white
+}
+
 .reg-reg-btn:hover{
     transform: translateY(-5px);
     background-color: white;
     color:  rgb(221, 85, 35);
+}
+
+.reg-reg-btn:active{
+    transform: translateY(-5px);
+    background-color: rgb(221, 85, 35);
+    color:  white
 }
 
 .reg-home-btn{
