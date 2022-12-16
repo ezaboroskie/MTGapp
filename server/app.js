@@ -5,13 +5,16 @@ const cors = require('cors')
 const jwt = require('jsonwebtoken')
 const authenticate = require('./middlewares/authMiddleware')
 const bcrypt = require('bcryptjs')
+const PORT = process.env.PORT || 8080
 require('dotenv').config()
 
 
 app.use(cors())
 app.use(express.json())
 
- 
+
+
+
 //GET ROUTES
 app.get('/', (req,res)=>{
     res.json({success:true})
@@ -106,6 +109,6 @@ app.post('/delete-fav', async(req,res)=>{
 })
 
 
-app.listen(8080, ()=>{
+app.listen(PORT, ()=>{
     console.log('Lets play some magic!')
 })
