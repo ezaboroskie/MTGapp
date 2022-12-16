@@ -75,7 +75,7 @@ app.post('/login', async (req,res)=>{
         const result = await bcrypt.compare(password, savedUser.password)
         if(result){res.json({success: true, token: token, username: savedUser.username, userId:savedUser.id })
     }else{
-        res.alert('Username or Password is not correct')
+        res.json({sucess: false})
         
     }}
 })
