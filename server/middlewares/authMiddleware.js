@@ -1,5 +1,6 @@
 const jwt = require('jsonwebtoken')
 const models = require('../models')
+require('dotenv').config()
 
 const authenticate = async (req,res,next)=>{
 
@@ -7,7 +8,7 @@ const authenticate = async (req,res,next)=>{
     if(header) {
         const token = header.split(' ')[1]
         try{
-            const decoded = jwt.verify(token,'SECRETKEYJWT')
+            const decoded = jwt.verify(token,process.env.JWT_KEY)
             if(decoded){
                 const username = decoded.username
                 const authUser = await models.User.findOne({
