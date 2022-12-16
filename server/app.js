@@ -11,7 +11,7 @@ require('dotenv').config()
 app.use(cors())
 app.use(express.json())
 
-
+ 
 //GET ROUTES
 app.get('/', (req,res)=>{
     res.json({success:true})
@@ -71,7 +71,7 @@ app.post('/login', async (req,res)=>{
     })
 
     if(savedUser){
-        const token = jwt.sign({username: savedUser.username}, 'SECRETKEYJWT')
+        const token = jwt.sign({username: savedUser.username}, process.env.JWT_KEY)
         const result = await bcrypt.compare(password, savedUser.password)
         if(result){res.json({success: true, token: token, username: savedUser.username, userId:savedUser.id })
     }else{
