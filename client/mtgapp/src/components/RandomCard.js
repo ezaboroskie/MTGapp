@@ -42,7 +42,7 @@ function RandomCard(){
         const token = localStorage.getItem('jwt')
         const userId = localStorage.getItem('userId')
 
-        fetch('http://localhost:8080/add-fav', {
+        fetch('http://afternoon-taiga-47194.herokuapp.com/add-fav', {
             method: 'POST',
             headers:{
                 'Content-Type': 'application/json',

@@ -38,7 +38,7 @@ function Login (props) {
             alert('Please enter a username')
         }else{
 
-        fetch('http://localhost:8080/login', {
+        fetch('http://afternoon-taiga-47194.herokuapp.com/login', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

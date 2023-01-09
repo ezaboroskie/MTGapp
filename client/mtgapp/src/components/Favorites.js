@@ -30,7 +30,7 @@ function Favorites () {
         const token = localStorage.getItem('jwt')
         const userId = localStorage.getItem('userId')
 
-        fetch(`http://localhost:8080/${userId}/favorites`, {
+        fetch(`http://afternoon-taiga-47194.herokuapp.com/${userId}/favorites`, {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -46,7 +46,7 @@ function Favorites () {
 
     const handleDelFav = (id) => {
 
-        fetch('http://localhost:8080/delete-fav', {
+        fetch('http://afternoon-taiga-47194.herokuapp.com/delete-fav', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'

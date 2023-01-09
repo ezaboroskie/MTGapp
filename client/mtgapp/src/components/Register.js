@@ -24,7 +24,7 @@ function Register(){
     const handleSubmit = () => {
 
 
-        fetch('http://localhost:8080/register', {
+        fetch('http://afternoon-taiga-47194.herokuapp.com/register', {
             method:'POST',
             headers:{
                 'Content-Type': 'application/json'
